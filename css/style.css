@@ -933,6 +933,8 @@ h1, h2, h3, h4 { line-height: 1.2; font-weight: 800; }
 [dir="rtl"] .credentials      { justify-content: flex-end; }
 [dir="rtl"] .about-text       { text-align: right; }
 [dir="rtl"] .service-card     { text-align: right; }
+/* Phone / email always LTR regardless of page direction */
+a[href^="tel"], a[href^="mailto"] { direction: ltr; unicode-bidi: isolate; display: inline-block; }
 [dir="rtl"] .hero-inner       { text-align: right; }
 [dir="rtl"] .hero-label       { flex-direction: row-reverse; }
 [dir="rtl"] .section-header .section-sub { margin-right: 0; }

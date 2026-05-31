@@ -384,28 +384,31 @@
 
       <div class="contact-form-card reveal">
         <h3 data-i18n="contact.form.title">Envoyez-nous un message</h3>
-        <form onsubmit="return false;">
+        <form id="contact-form" action="https://formspree.io/f/FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="Nouveau message — ALIB Consulting">
+          <input type="hidden" name="_language" value="fr">
+          <input type="text"   name="_gotcha"   style="display:none">
           <div class="form-group">
             <label data-i18n="contact.name">Votre nom complet</label>
-            <input type="text" data-i18n-ph="contact.name.ph" placeholder="Ex : Mohamed Alami">
+            <input type="text" name="name" required data-i18n-ph="contact.name.ph" placeholder="Ex : Mohamed Alami">
           </div>
           <div class="form-group">
             <label data-i18n="contact.email">Adresse email</label>
-            <input type="email" data-i18n-ph="contact.email.ph" placeholder="votre@email.com">
+            <input type="email" name="email" required data-i18n-ph="contact.email.ph" placeholder="votre@email.com">
           </div>
           <div class="form-group">
             <label data-i18n="contact.subject">Sujet</label>
-            <input type="text" data-i18n-ph="contact.subject.ph" placeholder="Ex : Demande de formation sur mesure">
+            <input type="text" name="subject" data-i18n-ph="contact.subject.ph" placeholder="Ex : Demande de formation sur mesure">
           </div>
           <div class="form-group">
             <label data-i18n="contact.message">Votre message</label>
-            <textarea data-i18n-ph="contact.message.ph" placeholder="Décrivez votre besoin ou votre projet…"></textarea>
+            <textarea name="message" required data-i18n-ph="contact.message.ph" placeholder="Décrivez votre besoin ou votre projet…"></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" data-i18n="contact.send">
             Envoyer le message
           </button>
-          <p class="form-note" data-i18n="contact.note">
-            📬 Ce formulaire est purement visuel. Pour l'activer, connectez-le à Formspree.io ou Netlify Forms.
+          <p class="form-note">
+            📬 Les messages arrivent directement dans votre boîte <strong>alibconseil@gmail.com</strong>.
           </p>
         </form>
       </div>
@@ -437,7 +440,7 @@
           <div class="contact-item-icon">🌐</div>
           <div class="contact-item-text">
             <div class="ci-label" data-i18n="contact.web.label">Site Web</div>
-            <div class="ci-val"><a href="https://alibconsulting.com" target="_blank">alibconsulting.com</a></div>
+            <div class="ci-val"><a href="https://alibconsulting.github.io" target="_blank">alibconsulting.github.io</a></div>
           </div>
         </div>
         <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);">
@@ -510,7 +513,7 @@
           <li><a href="mailto:alibconseil@gmail.com">alibconseil@gmail.com</a></li>
           <li><a href="tel:+212661102093">+212 661 102 093</a></li>
           <li><a href="#contact">Marrakech, Maroc</a></li>
-          <li><a href="https://alibconsulting.com" target="_blank">alibconsulting.com</a></li>
+          <li><a href="https://alibconsulting.github.io" target="_blank">alibconsulting.github.io</a></li>
         </ul>
       </div>
     </div>
