@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formation Méthodes de Recherche — Casablanca 2026 | ALIB Consulting</title>
+  <meta name="description" content="Formation intensive en méthodes de recherche : théorie, quali, quanti et IA. Casablanca, juillet ou septembre 2026. Pack tout inclus avec hébergement 3 étoiles et certificat.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="canonical" href="https://alibconsulting.github.io/formation.html">
+
+  <style>
+    /* ── Formation hero ─────────────────────────────────────── */
+    .f-hero {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 60%, var(--blue) 100%);
+      padding: 130px 0 80px;
+      color: var(--white);
+    }
+    .f-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 22px;
+    }
+    .f-hero h1 em { color: var(--orange-light); font-style: normal; }
+    .f-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.82);
+      max-width: 600px;
+      margin-bottom: 34px;
+      line-height: 1.7;
+    }
+    .f-hero-tag {
+      display: inline-block;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.9);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    .f-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 38px;
+    }
+    .f-badge {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: .86rem;
+      color: rgba(255,255,255,.88);
+      font-weight: 500;
+    }
+
+    /* ── Formateur cards ────────────────────────────────────── */
+    .formateur-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px 26px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .formateur-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--orange));
+    }
+    .formateur-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .formateur-initials {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .formateur-grade {
+      display: inline-block;
+      background: var(--bg-light);
+      color: var(--blue);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+    .formateur-card h3 { font-size: 1.1rem; margin-bottom: 6px; color: var(--blue-dark); }
+    .formateur-card .labo { font-size: .83rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .formateur-theme {
+      font-size: .87rem;
+      color: var(--text);
+      border-left: 3px solid var(--orange);
+      padding-left: 11px;
+      line-height: 1.55;
+    }
+
+    /* ── Module cards ───────────────────────────────────────── */
+    .module-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .module-card:hover { box-shadow: var(--shadow); }
+    .module-num {
+      width: 46px; height: 46px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-mid));
+      color: var(--white);
+      font-size: 1.15rem;
+      font-weight: 900;
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .module-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 6px; color: var(--blue-dark); }
+    .module-card p  { font-size: .87rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    /* ── Pack items ─────────────────────────────────────────── */
+    .pack-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 22px;
+      margin-bottom: 42px;
+    }
+    .pack-item {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      text-align: center;
+    }
+    .pack-icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+    .pack-item h4 { font-size: .97rem; margin-bottom: 6px; }
+    .pack-item p  { font-size: .84rem; line-height: 1.55; margin: 0; opacity: .75; }
+
+    /* ── Form ───────────────────────────────────────────────── */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .form-group label { font-size: .85rem; font-weight: 600; color: var(--blue-dark); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 11px 13px;
+      font-size: .93rem;
+      color: var(--text);
+      background: var(--bg-light);
+      transition: border-color .2s;
+      width: 100%;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      background: var(--white);
+    }
+    .form-note {
+      font-size: .82rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 28px;
+    }
+    .form-success .check { font-size: 2.8rem; margin-bottom: 14px; display: block; }
+    .form-success h3 { color: var(--blue-dark); margin-bottom: 10px; }
+    .form-success p { color: var(--text-muted); }
+
+    /* ── Nav active state ───────────────────────────────────── */
+    .nav-formation { color: var(--orange) !important; font-weight: 700 !important; }
+
+    @media (max-width: 768px) {
+      .form-row-2 { grid-template-columns: 1fr; }
+      .form-card  { padding: 26px 18px; }
+      .f-badges   { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════ NAV ══════════════════════════════ -->
+<nav class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.png" alt="ALIB Consulting">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#about">À Propos</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#blog">Blog</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="formation.html" class="nav-formation">Formation</a>
+    </div>
+    <div class="nav-right">
+      <a href="#inscription" class="btn btn-primary">Pré-inscription</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Accueil</a>
+  <a href="index.html#about">À Propos</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#blog">Blog</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="formation.html" class="nav-formation">Formation</a>
+  <a href="#inscription" class="btn btn-primary" style="margin-top:8px;">Pré-inscription</a>
+</div>
+
+<main class="page-content">
+
+<!-- ══════════════════════════ HERO ═════════════════════════════ -->
+<section class="f-hero">
+  <div class="container">
+    <div class="f-hero-tag">Formation Intensive · Casablanca · 2026</div>
+    <h1>Méthodes de Recherche :<br><em>Théorie, Quali, Quanti & IA</em></h1>
+    <p>Une formation intensive animée par trois enseignants-chercheurs pour maîtriser l'intégralité du processus de recherche scientifique — de la posture épistémologique aux outils d'intelligence artificielle.</p>
+    <div class="f-badges">
+      <div class="f-badge">📍 Casablanca</div>
+      <div class="f-badge">📅 Juillet ou Septembre 2026</div>
+      <div class="f-badge">👨‍🏫 3 formateurs</div>
+      <div class="f-badge">🎓 Certificat inclus</div>
+      <div class="f-badge">🏨 Pack hébergement disponible</div>
+      <div class="f-badge">📐 Places limitées</div>
+    </div>
+    <a href="#inscription" class="btn btn-primary" style="font-size:1rem;padding:13px 32px;">Je souhaite m'inscrire</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FORMATEURS ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="label-chip">Vos Formateurs</span>
+      <h2 class="section-title">Trois enseignants-chercheurs, une expertise complémentaire</h2>
+      <p class="section-sub">Chaque formateur apporte une spécialisation distincte pour couvrir l'ensemble des dimensions de la recherche en sciences de gestion.</p>
+    </div>
+
+    <div class="grid-3" style="margin-top:48px;">
+
+      <div class="formateur-card reveal reveal-delay-1">
+        <div class="formateur-initials">NG</div>
+        <div class="formateur-grade">PH — Professeur Habilité</div>
+        <h3>Noufel GHIFFI</h3>
+        <p class="labo">Laboratoire Nouvelles Pratiques de Gestion<br>FSJES — Université Cadi Ayyad, Marrakech</p>
+        <div class="formateur-theme">Entrepreneuriat, sciences de gestion</div>
+      </div>
+
+      <div class="formateur-card reveal reveal-delay-2">
+        <div class="formateur-initials">ME</div>
+        <div class="formateur-grade">PA — Professeur Agrégé</div>
+        <h3>Mostapha EL IDRISSI</h3>
+        <p class="labo">Laboratoire LERAEM<br>FSJES Kelâa des Sraghna — Université Cadi Ayyad</p>
+        <div class="formateur-theme">Stratégie, innovation et entrepreneuriat</div>
+      </div>
+
+      <div class="formateur-card reveal reveal-delay-3">
+        <div class="formateur-initials">AB</div>
+        <div class="formateur-grade">PH — Professeur Habilité</div>
+        <h3>Ali BEZZAA</h3>
+        <p class="labo">Laboratoire Nouvelles Pratiques de Gestion<br>FSJES — Université Cadi Ayyad, Marrakech</p>
+        <div class="formateur-theme">Entrepreneuriat, santé psychologique au travail, méthodes quantitatives & IA pour la recherche</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PROGRAMME ════════════════════════ -->
+<section class="section section--alt" id="programme">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="label-chip">Programme</span>
+      <h2 class="section-title">4 modules pour maîtriser toute la démarche</h2>
+      <p class="section-sub">Du cadre épistémologique à l'analyse des données, en passant par les méthodes qualitatives, quantitatives et les outils IA.</p>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-top:48px;">
+
+      <div class="module-card">
+        <div class="module-num">1</div>
+        <div>
+          <h3>Fondements théoriques de la recherche</h3>
+          <p>Posture épistémologique, paradigmes de recherche, problématisation, cadre conceptuel et revue de littérature structurée.</p>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">2</div>
+        <div>
+          <h3>Méthodologie qualitative</h3>
+          <p>Entretiens semi-directifs, focus groups, codage thématique, analyse de contenu et validité en recherche qualitative.</p>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">3</div>
+        <div>
+          <h3>Méthodes quantitatives & PLS-SEM</h3>
+          <p>Construction des échelles de mesure, modèles d'équations structurelles (PLS-SEM), analyse de médiation et modération.</p>
+        </div>
+      </div>
+
+      <div class="module-card">
+        <div class="module-num">4</div>
+        <div>
+          <h3>Intelligence artificielle pour la recherche</h3>
+          <p>Outils IA pour la revue de littérature, l'analyse qualitative assistée, la rédaction académique et la valorisation des résultats.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PACK ═════════════════════════════ -->
+<section class="section section--dark" id="pack">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="label-chip" style="background:rgba(255,255,255,.15);color:var(--white);border-color:rgba(255,255,255,.25);">Pack Tout Inclus</span>
+      <h2 class="section-title">Une formation, une expérience complète</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.72);">Pour les participants venant de l'extérieur de Casablanca, nous proposons un pack tout compris pour vous concentrer pleinement sur la formation.</p>
+    </div>
+
+    <div class="pack-grid reveal" style="margin-top:46px;">
+      <div class="pack-item">
+        <span class="pack-icon">🎓</span>
+        <h4>Formation complète</h4>
+        <p>Les 4 modules animés par les 3 formateurs, supports de cours inclus</p>
+      </div>
+      <div class="pack-item">
+        <span class="pack-icon">📜</span>
+        <h4>Certificat de participation</h4>
+        <p>Certificat officiel signé par les formateurs à l'issue de la formation</p>
+      </div>
+      <div class="pack-item">
+        <span class="pack-icon">🏨</span>
+        <h4>Hébergement 3 étoiles</h4>
+        <p>Chambre en hôtel 3* à Casablanca, demi-pension (petit-déjeuner + dîner)</p>
+      </div>
+      <div class="pack-item">
+        <span class="pack-icon">☕</span>
+        <h4>Pauses café</h4>
+        <p>Pauses café et collations incluses tout au long des journées de formation</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:34px;">
+      Une option sans hébergement est également disponible pour les participants résidant à Casablanca.
+    </p>
+
+    <div style="text-align:center;" class="reveal">
+      <a href="#inscription" class="btn btn-primary" style="font-size:1rem;padding:13px 34px;">Voir les tarifs & s'inscrire</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ INSCRIPTION ══════════════════════ -->
+<section class="section" id="inscription">
+  <div class="container">
+    <div class="section-header center reveal">
+      <span class="label-chip">Pré-inscription</span>
+      <h2 class="section-title">Réservez votre place</h2>
+      <p class="section-sub">La date définitive sera confirmée par email dès que le quota de participants est atteint. La pré-inscription est gratuite et sans engagement.</p>
+    </div>
+
+    <div class="form-card reveal" style="margin-top:48px;">
+
+      <div id="form-success" class="form-success">
+        <span class="check">✅</span>
+        <h3>Pré-inscription enregistrée !</h3>
+        <p>Merci pour votre intérêt. Nous vous contacterons dès que la date est confirmée avec tous les détails (programme, tarifs, logistique).</p>
+      </div>
+
+      <form id="inscription-form" action="https://formspree.io/f/mnjryvbb" method="POST">
+        <input type="hidden" name="_subject" value="Pré-inscription Formation Méthodes de Recherche — Casablanca 2026">
+        <input type="hidden" name="source" value="formation-casablanca-2026">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="prenom">Prénom *</label>
+            <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="votre@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="institution">Institution / Organisation *</label>
+          <input type="text" id="institution" name="institution" required placeholder="Université, laboratoire, entreprise...">
+        </div>
+
+        <div class="form-group">
+          <label for="statut">Statut *</label>
+          <select id="statut" name="statut" required>
+            <option value="" disabled selected>Sélectionner votre statut</option>
+            <option value="doctorant">Doctorant(e)</option>
+            <option value="enseignant-chercheur">Enseignant(e)-chercheur(e)</option>
+            <option value="master">Étudiant(e) en Master Recherche</option>
+            <option value="professionnel">Professionnel(le) en activité</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pack-choix">Option souhaitée</label>
+          <select id="pack-choix" name="pack">
+            <option value="" disabled selected>Sélectionner une option</option>
+            <option value="pack-complet">Pack complet (formation + hébergement + certificat)</option>
+            <option value="sans-hebergement">Formation + certificat uniquement (sans hébergement)</option>
+            <option value="a-discuter">Je souhaite en savoir plus avant de choisir</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comment-trouve">Comment avez-vous entendu parler de cette formation ?</label>
+          <input type="text" id="comment-trouve" name="comment_trouve" placeholder="LinkedIn, recommandation, YouTube...">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;padding:13px;font-size:.97rem;margin-top:6px;">
+          Envoyer ma pré-inscription
+        </button>
+
+        <p class="form-note">
+          Pré-inscription gratuite et sans engagement.<br>
+          Nous vous recontactons avec les tarifs et la date confirmée.<br>
+          📧 alibconseil@gmail.com &nbsp;·&nbsp; 📞 +212 661 102 093
+        </p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="img/logo.png" alt="ALIB Consulting" style="height:36px;filter:brightness(0) invert(1);opacity:.8;">
+        <p class="footer-desc">Formation intensive en méthodes de recherche — Casablanca 2026. Animée par trois enseignants-chercheurs de l'Université Cadi Ayyad.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/company/alib-consulting/" target="_blank" rel="noopener" class="social-btn linkedin" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="https://web.facebook.com/alibconsulting" target="_blank" rel="noopener" class="social-btn facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/alib_consulting" target="_blank" rel="noopener" class="social-btn instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#about">À Propos</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="formation.html" style="color:var(--orange);">Formation 2026</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>La Formation</h4>
+        <ul>
+          <li><a href="#inscription">Pré-inscription</a></li>
+          <li><a href="#programme">Programme</a></li>
+          <li><a href="#pack">Pack Tout Inclus</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li dir="ltr" style="text-align:left"><a href="mailto:alibconseil@gmail.com">alibconseil@gmail.com</a></li>
+          <li dir="ltr" style="text-align:left"><a href="tel:+212661102093">+212 661 102 093</a></li>
+          <li><a href="https://alibconsulting.github.io">alibconsulting.github.io</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> ALIB Consulting. Tous droits réservés.</span>
+      <span>Expertise · Innovation · Résultats</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobile-nav').classList.toggle('open');
+  });
+
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  const observer = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.getElementById('inscription-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type=submit]');
+    btn.textContent = 'Envoi en cours…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        this.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.textContent = 'Erreur — réessayer';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Erreur — réessayer';
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>
