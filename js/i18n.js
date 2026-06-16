@@ -397,7 +397,7 @@ const TRANSLATIONS = {
     'about.tag':        'Founder & Lead Consultant',
     'about.name':       'Ali Bezzaa',
     'about.p1': 'Associate Professor at Cadi Ayyad University in Marrakech and founder of ALIB Consulting, Ali Bezzaa is a rare profile combining academic rigor and deep institutional grounding. With over 10 years of experience at the Ministry of Interior as a territorial executive, he has mastered the complexities of Moroccan local governance and delivers solutions that blend pedagogical innovation with operational expertise.',
-    'about.p2': 'Holding a PhD in Economics and Management (Hassan 1st University), an MSc in International Management (Reutlingen University, Germany) and a BBA (Al Akhawayn University), he currently teaches business strategy and competitive intelligence at university — expertise he puts directly at his clients\' service.',
+    'about.p2': 'Holding a PhD in Economics and Management (Hassan 1st University),and a BBA (Al Akhawayn University), he currently teaches business strategy and data analysis at university — expertise he puts directly at his clients\' service.',
     'about.p3': 'Since founding ALIB Consulting in 2021, he supports public administrations, local authorities, private firms and entrepreneurs in their training programs, strategic and market studies, archiving and digitization projects, and governance and development challenges.',
     'about.cred1': 'PhD in Management',
     'about.cred2': 'MSc International (Germany)',
