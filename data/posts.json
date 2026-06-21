@@ -1,5 +1,17 @@
 [
   {
+    "id": 7,
+    "date": "2026-06-21",
+    "slug": "comment-rediger-un-article-theorique",
+    "category_fr": "Recherche",
+    "category_ar": "البحث العلمي",
+    "title_fr": "Comment rédiger un article théorique : les conseils des éditeurs de l'AMR",
+    "title_ar": "كيف تكتب مقالًا نظريًا: نصائح محرري مجلة AMR",
+    "excerpt_fr": "Deux articles de l'Academy of Management Review dévoilent la méthode en 7 exercices pour construire un papier théorique solide, et les erreurs fatales qui mènent au rejet. Synthèse pratique pour doctorants et chercheurs.",
+    "excerpt_ar": "مقالتان من Academy of Management Review تكشفان منهجية من 7 تمارين لبناء مقال نظري متين، والأخطاء القاتلة التي تؤدي إلى الرفض. خلاصة عملية للباحثين وطلبة الدكتوراه.",
+    "image": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&q=80&fit=crop"
+  },
+  {
     "id": 1,
     "date": "2026-05-25",
     "category_fr": "Collectivités",
