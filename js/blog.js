@@ -22,6 +22,11 @@ function createBlogCard(post) {
     ? `<img class="blog-card__img" src="${post.image}" alt="${title}" loading="lazy">`
     : `<div class="blog-card__img-placeholder">📝</div>`;
 
+  const linkHref = post.slug ? `blog/${post.slug}.html` : '#';
+  const linkTag = post.slug
+    ? `<a class="blog-card__link" href="${linkHref}">${readMore}</a>`
+    : `<span class="blog-card__link">${readMore}</span>`;
+
   return `
     <article class="blog-card reveal">
       ${imgEl}
@@ -32,7 +37,7 @@ function createBlogCard(post) {
         </div>
         <h3 class="blog-card__title">${title}</h3>
         <p class="blog-card__excerpt">${excerpt}</p>
-        <span class="blog-card__link">${readMore}</span>
+        ${linkTag}
       </div>
     </article>`;
 }
