@@ -106,11 +106,15 @@
 </nav>
 
 <main class="blog-post">
-  <a href="../index.html#blog" class="blog-post__back">← Retour au blog</a>
+  <a href="../index.html#blog" class="blog-post__back" id="back-fr">← Retour au blog</a>
+  <a href="../index.html#blog" class="blog-post__back" id="back-ar" style="display:none;">→ العودة إلى المدونة</a>
 
-  <span class="blog-post__category">Recherche</span>
-  <h1 class="blog-post__title" id="post-title">Comment rédiger un article théorique : les conseils des éditeurs de l'AMR</h1>
-  <p class="blog-post__date" id="post-date">21 juin 2026</p>
+  <span class="blog-post__category" id="cat-fr">Recherche</span>
+  <span class="blog-post__category" id="cat-ar" style="display:none;">البحث العلمي</span>
+  <h1 class="blog-post__title" id="title-fr">Comment rédiger un article théorique : les conseils des éditeurs de l'AMR</h1>
+  <h1 class="blog-post__title" id="title-ar" style="display:none;">كيف تكتب مقالًا نظريًا: نصائح محرري مجلة AMR</h1>
+  <p class="blog-post__date" id="date-fr">21 juin 2026</p>
+  <p class="blog-post__date" id="date-ar" style="display:none;">21 يونيو 2026</p>
 
   <img class="blog-post__hero" src="https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=800&q=80&fit=crop" alt="Comment rédiger un article théorique" loading="lazy">
 
@@ -210,8 +214,8 @@
     <p>كتابة مقال نظري تمرين صعب. لكن بالمنهجية الصحيحة، يصبح في المتناول — حتى عندما تكونون في بداية مشواركم البحثي.</p>
   </div>
 
-  <!-- Sources -->
-  <div class="blog-post__sources" id="sources">
+  <!-- Sources FR -->
+  <div class="blog-post__sources" id="sources-fr">
     <h3>Références</h3>
     <ul>
       <li>Thatcher, S. M. B. et al. (2021). From the Editors — The Nuts and Bolts of Writing a Theory Paper: A Practical Guide to Getting Started. <em>Academy of Management Review</em>, 46(4). DOI: 10.5465/amr.2021.0483</li>
@@ -219,10 +223,25 @@
     </ul>
   </div>
 
-  <!-- CTA -->
-  <div class="blog-post__cta">
+  <!-- Sources AR -->
+  <div class="blog-post__sources" id="sources-ar" style="display:none;">
+    <h3>المراجع</h3>
+    <ul>
+      <li>Thatcher, S. M. B. et al. (2021). From the Editors — The Nuts and Bolts of Writing a Theory Paper: A Practical Guide to Getting Started. <em>Academy of Management Review</em>, 46(4). DOI: 10.5465/amr.2021.0483</li>
+      <li>Campbell, J. T. & Aguilera, R. V. (2022). Why I Rejected Your Paper: Common Pitfalls in Writing Theory Papers and How to Avoid Them. <em>Academy of Management Review</em>, 47(4). DOI: 10.5465/amr.2022.0331</li>
+    </ul>
+  </div>
+
+  <!-- CTA FR -->
+  <div class="blog-post__cta" id="cta-fr">
     <p style="margin-bottom:12px;font-weight:600;">Vous voulez maîtriser la méthodologie de recherche et la rédaction académique ?</p>
     <a href="../formation.html">Découvrir notre formation intensive</a>
+  </div>
+
+  <!-- CTA AR -->
+  <div class="blog-post__cta" id="cta-ar" style="display:none;">
+    <p style="margin-bottom:12px;font-weight:600;">هل تريدون إتقان منهجية البحث والكتابة الأكاديمية؟</p>
+    <a href="../formation.html">اكتشفوا تكويننا المكثف</a>
   </div>
 </main>
 
@@ -232,25 +251,20 @@
 <script>
 let currentLang = 'fr';
 function toggleLang() {
-  const fr = document.getElementById('content-fr');
-  const ar = document.getElementById('content-ar');
+  const ids = ['content', 'title', 'date', 'cat', 'sources', 'cta', 'back'];
   const btn = document.querySelector('.blog-post__lang-toggle');
   const html = document.documentElement;
-  if (currentLang === 'fr') {
-    fr.style.display = 'none';
-    ar.style.display = 'block';
-    btn.textContent = 'Français';
-    html.setAttribute('dir', 'rtl');
-    html.setAttribute('lang', 'ar');
-    currentLang = 'ar';
-  } else {
-    ar.style.display = 'none';
-    fr.style.display = 'block';
-    btn.textContent = 'عربي';
-    html.setAttribute('dir', 'ltr');
-    html.setAttribute('lang', 'fr');
-    currentLang = 'fr';
-  }
+  const showLang = currentLang === 'fr' ? 'ar' : 'fr';
+  ids.forEach(function(id) {
+    var elFr = document.getElementById(id + '-fr');
+    var elAr = document.getElementById(id + '-ar');
+    if (elFr) elFr.style.display = showLang === 'fr' ? 'block' : 'none';
+    if (elAr) elAr.style.display = showLang === 'ar' ? 'block' : 'none';
+  });
+  btn.textContent = showLang === 'ar' ? 'Français' : 'عربي';
+  html.setAttribute('dir', showLang === 'ar' ? 'rtl' : 'ltr');
+  html.setAttribute('lang', showLang);
+  currentLang = showLang;
 }
 </script>
 
