@@ -1,5 +1,17 @@
 [
   {
+    "id": 2,
+    "date": "2026-06-21",
+    "slug": "ia-creativite-employes-management",
+    "category_fr": "Recherche",
+    "category_ar": "البحث العلمي",
+    "title_fr": "L'IA ne va pas vous remplacer : elle pourrait vous rendre plus créatif",
+    "title_ar": "الذكاء الاصطناعي لن يحل محلكم: بل قد يجعلكم أكثر إبداعًا",
+    "excerpt_fr": "Deux études de l'Academy of Management montrent que l'IA augmente la créativité des employés qualifiés et ouvre trois modes de collaboration humain-machine pour résoudre des problèmes complexes.",
+    "excerpt_ar": "دراستان من Academy of Management تكشفان أن الذكاء الاصطناعي يعزز إبداع الموظفين المؤهلين ويفتح ثلاثة أنماط للتعاون بين الإنسان والآلة لحل المشكلات المعقدة.",
+    "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80&fit=crop"
+  },
+  {
     "id": 1,
     "date": "2026-06-21",
     "slug": "comment-rediger-un-article-theorique",
