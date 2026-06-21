@@ -15,7 +15,7 @@ function createBlogCard(post) {
   const lang   = getLang();
   const title   = post['title_'  + lang] || post.title   || post.title_fr  || '';
   const excerpt = post['excerpt_'+ lang] || post.excerpt || post.excerpt_fr || '';
-  const cat     = post['category_'+lang] || post.category || '';
+  const cat     = post['category_'+lang] || post.category || post.category_fr || '';
   const readMore = lang === 'ar' ? 'اقرأ المزيد ←' : 'Lire la suite →';
 
   const imgEl = post.image
@@ -56,6 +56,7 @@ async function loadPosts(containerId, limit = null) {
     let posts = await res.json();
 
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    posts = posts.filter(p => !!p['title_' + lang]);
     if (limit) posts = posts.slice(0, limit);
 
     if (!posts.length) {
