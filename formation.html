@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formation Méthodes de Recherche — Casablanca 2026 | ALIB Consulting</title>
-  <meta name="description" content="Formation intensive en méthodes de recherche : théorie, quali, quanti et IA. Casablanca, juillet ou septembre 2026. Pack tout inclus avec hébergement 3 étoiles et certificat.">
+  <meta name="description" content="Formation intensive en méthodes de recherche : théorie, quali, quanti avec IA intégrée à chaque module. Casablanca, juillet ou septembre 2026. Certificat inclus.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -118,6 +118,13 @@
     }
 
     /* ── Module cards ───────────────────────────────────────── */
+    .modules-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
     .module-card {
       display: flex;
       gap: 18px;
@@ -142,6 +149,26 @@
     }
     .module-card h3 { font-size: .98rem; font-weight: 700; margin-bottom: 6px; color: var(--blue-dark); }
     .module-card p  { font-size: .87rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+    .module-ai {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    .module-ai-label {
+      display: inline-block;
+      font-size: .74rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 5px;
+    }
+    .module-ai p {
+      font-size: .84rem !important;
+      color: var(--text) !important;
+      line-height: 1.6;
+      margin: 0;
+    }
 
     /* ── Pack items ─────────────────────────────────────────── */
     .pack-grid {
@@ -207,6 +234,27 @@
     .form-success .check { font-size: 2.8rem; margin-bottom: 14px; display: block; }
     .form-success h3 { color: var(--blue-dark); margin-bottom: 10px; }
     .form-success p { color: var(--text-muted); }
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .checkbox-group label {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-weight: 400;
+      cursor: pointer;
+      font-size: .9rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
 
     /* ── Nav active state ───────────────────────────────────── */
     .nav-formation { color: var(--orange) !important; font-weight: 700 !important; }
@@ -258,13 +306,12 @@
   <div class="container">
     <div class="f-hero-tag">Formation Intensive · Casablanca · 2026</div>
     <h1>Méthodes de Recherche :<br><em>Théorie, Quali, Quanti & IA</em></h1>
-    <p>Une formation intensive animée par trois enseignants-chercheurs pour maîtriser l'intégralité du processus de recherche scientifique — de la posture épistémologique aux outils d'intelligence artificielle.</p>
+    <p>Une formation intensive animée par trois enseignants-chercheurs pour maîtriser l'intégralité du processus de recherche scientifique — de la construction théorique aux méthodes d'analyse, avec l'intelligence artificielle intégrée à chaque étape.</p>
     <div class="f-badges">
       <div class="f-badge">📍 Casablanca</div>
       <div class="f-badge">📅 Juillet ou Septembre 2026</div>
       <div class="f-badge">👨‍🏫 3 formateurs</div>
       <div class="f-badge">🎓 Certificat inclus</div>
-      <div class="f-badge">🏨 Pack hébergement disponible</div>
       <div class="f-badge">📐 Places limitées</div>
     </div>
     <a href="#inscription" class="btn btn-primary" style="font-size:1rem;padding:13px 32px;">Je souhaite m'inscrire</a>
@@ -287,7 +334,7 @@
         <div class="formateur-grade">PES — Professeur de l'Enseignement Supérieur</div>
         <h3>Noufel GHIFFI</h3>
         <p class="labo">Laboratoire Nouvelles Pratiques de Gestion<br>FSJES — Université Cadi Ayyad, Marrakech</p>
-        <div class="formateur-theme">Entrepreneuriat, Economie, épistémologie</div>
+        <div class="formateur-theme">Entrepreneuriat, économie, théorie de la recherche</div>
       </div>
 
       <div class="formateur-card reveal reveal-delay-2">
@@ -315,17 +362,21 @@
   <div class="container">
     <div class="section-header center reveal">
       <span class="label-chip">Programme</span>
-      <h2 class="section-title">4 modules pour maîtriser toute la démarche</h2>
-      <p class="section-sub">Du cadre épistémologique à l'analyse des données, en passant par les méthodes qualitatives, quantitatives et les outils IA.</p>
+      <h2 class="section-title">3 modules pour maîtriser toute la démarche</h2>
+      <p class="section-sub">De la construction théorique à l'analyse des données, en passant par les méthodes qualitatives et quantitatives — avec les outils IA intégrés à chaque module.</p>
     </div>
 
-    <div class="grid-2 reveal" style="margin-top:48px;">
+    <div class="modules-stack reveal" style="margin-top:48px;">
 
       <div class="module-card">
         <div class="module-num">1</div>
         <div>
           <h3>Fondements théoriques de la recherche</h3>
-          <p>Posture épistémologique, paradigmes de recherche, problématisation, cadre conceptuel et revue de littérature structurée.</p>
+          <p>Paradigmes de recherche, problématisation, construction du cadre conceptuel et revue de littérature structurée.</p>
+          <div class="module-ai">
+            <span class="module-ai-label">Avec l'IA :</span>
+            <p>Découverte de littérature via Semantic Scholar, Connected Papers et ResearchRabbit (graphes de citations), puis extraction des résultats clés avec Elicit et recherche de consensus scientifique via Consensus. NotebookLM (Google) permet de charger un corpus de PDF et de l'interroger interactivement. Claude intervient pour la synthèse croisée, la construction de modèles conceptuels (médiation, modération), la traduction d'articles anglophones (avec DeepL pour la précision terminologique), et la reformulation ou vulgarisation de passages théoriques complexes. Point de vigilance : toute référence générée par IA doit être vérifiée via son DOI — risque documenté de citations inventées.</p>
+          </div>
         </div>
       </div>
 
@@ -334,6 +385,10 @@
         <div>
           <h3>Méthodologie qualitative</h3>
           <p>Entretiens semi-directifs, focus groups, codage thématique, analyse de contenu et validité en recherche qualitative.</p>
+          <div class="module-ai">
+            <span class="module-ai-label">Avec l'IA :</span>
+            <p>Transcription multilingue (FR/AR/EN) des entretiens et focus groups via Whisper (OpenAI, open source) ou Otter.ai (temps réel avec résumés). Codage thématique assisté par Claude Code : structuration du corpus, proposition d'un arbre de codes initial, repérage des verbatims récurrents et accélération de la saturation théorique. NotebookLM pour l'analyse exploratoire d'un corpus d'entretiens transcrits. Claude pour la reformulation académique et l'adaptation de registre. En complément des logiciels spécialisés (NVivo, ATLAS.ti) pour l'audit inter-codeurs et la rigueur méthodologique finale — l'IA accélère l'exploration, le chercheur valide et interprète.</p>
+          </div>
         </div>
       </div>
 
@@ -342,14 +397,10 @@
         <div>
           <h3>Méthodes quantitatives & PLS-SEM</h3>
           <p>Construction des échelles de mesure, modèles d'équations structurelles (PLS-SEM), analyse de médiation et modération.</p>
-        </div>
-      </div>
-
-      <div class="module-card">
-        <div class="module-num">4</div>
-        <div>
-          <h3>Intelligence artificielle pour la recherche</h3>
-          <p>Outils IA pour la revue de littérature, l'analyse qualitative assistée, la rédaction académique et la valorisation des résultats.</p>
+          <div class="module-ai">
+            <span class="module-ai-label">Avec l'IA :</span>
+            <p>Claude Code automatise l'analyse PLS-SEM de bout en bout : génération de scripts R exécutés dans RStudio (package SEMinR), validation du modèle de mesure (fiabilité composite, AVE, HTMT), tests de médiation/modération, et tableaux de résultats formatés APA 7. SmartPLS comme alternative graphique pour les chercheurs préférant une interface visuelle. Python (pandas, matplotlib) pour le nettoyage de données et les visualisations, JASP pour les analyses statistiques de base (tests t, ANOVA, régressions). Construction de questionnaires bilingues (FR/AR) à partir d'échelles validées avec déploiement automatisé sur Google Forms. Claude pour la sélection et justification des échelles de mesure, la relecture statistique et la correction du style APA. Toute sortie statistique doit être vérifiée avant intégration dans un manuscrit.</p>
+          </div>
         </div>
       </div>
 
@@ -361,16 +412,16 @@
 <section class="section section--dark" id="pack">
   <div class="container">
     <div class="section-header center reveal">
-      <span class="label-chip" style="background:rgba(255,255,255,.15);color:var(--white);border-color:rgba(255,255,255,.25);">Pack Tout Inclus</span>
-      <h2 class="section-title">Une formation, une expérience complète</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,.72);">Pour les participants venant de l'extérieur de Casablanca, nous proposons un pack tout compris pour vous concentrer pleinement sur la formation.</p>
+      <span class="label-chip" style="background:rgba(255,255,255,.15);color:var(--white);border-color:rgba(255,255,255,.25);">Pack Inclus</span>
+      <h2 class="section-title">Ce qui est inclus dans la formation</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.72);">Tout ce dont vous avez besoin pour vous concentrer pleinement sur l'apprentissage.</p>
     </div>
 
     <div class="pack-grid reveal" style="margin-top:46px;">
       <div class="pack-item">
         <span class="pack-icon">🎓</span>
         <h4>Formation complète</h4>
-        <p>Les 4 modules animés par les 3 formateurs, supports de cours inclus</p>
+        <p>Les 3 modules animés par les 3 formateurs, supports de cours inclus</p>
       </div>
       <div class="pack-item">
         <span class="pack-icon">📜</span>
@@ -378,20 +429,11 @@
         <p>Certificat officiel signé par les formateurs à l'issue de la formation</p>
       </div>
       <div class="pack-item">
-        <span class="pack-icon">🏨</span>
-        <h4>Hébergement 3 étoiles</h4>
-        <p>Chambre en hôtel 3* à Casablanca, demi-pension (petit-déjeuner + dîner)</p>
-      </div>
-      <div class="pack-item">
         <span class="pack-icon">☕</span>
         <h4>Pauses café</h4>
         <p>Pauses café et collations incluses tout au long des journées de formation</p>
       </div>
     </div>
-
-    <p style="text-align:center;color:rgba(255,255,255,.6);font-size:.88rem;margin-bottom:34px;">
-      Une option sans hébergement est également disponible pour les participants résidant à Casablanca.
-    </p>
 
     <div style="text-align:center;" class="reveal">
       <a href="#inscription" class="btn btn-primary" style="font-size:1rem;padding:13px 34px;">Voir les tarifs & s'inscrire</a>
@@ -454,13 +496,21 @@
         </div>
 
         <div class="form-group">
-          <label for="pack-choix">Option souhaitée</label>
-          <select id="pack-choix" name="pack">
-            <option value="" disabled selected>Sélectionner une option</option>
-            <option value="pack-complet">Pack complet (formation + hébergement + certificat)</option>
-            <option value="sans-hebergement">Formation + certificat uniquement (sans hébergement)</option>
-            <option value="a-discuter">Je souhaite en savoir plus avant de choisir</option>
-          </select>
+          <label>Module(s) souhaité(s) — cochez 1, 2 ou les 3 modules</label>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" name="modules" value="module-1-theorie">
+              Module 1 — Fondements théoriques de la recherche
+            </label>
+            <label>
+              <input type="checkbox" name="modules" value="module-2-quali">
+              Module 2 — Méthodologie qualitative
+            </label>
+            <label>
+              <input type="checkbox" name="modules" value="module-3-quanti-pls">
+              Module 3 — Méthodes quantitatives & PLS-SEM
+            </label>
+          </div>
         </div>
 
         <div class="form-group">
@@ -516,7 +566,7 @@
         <ul>
           <li><a href="#inscription">Pré-inscription</a></li>
           <li><a href="#programme">Programme</a></li>
-          <li><a href="#pack">Pack Tout Inclus</a></li>
+          <li><a href="#pack">Pack Inclus</a></li>
         </ul>
       </div>
       <div class="footer-col">
