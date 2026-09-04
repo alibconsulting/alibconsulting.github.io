@@ -294,6 +294,51 @@
       background: var(--accent-strong);
     }
 
+    button.secondary {
+      width: 100%;
+      font: inherit;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 11px 16px;
+      margin-top: 10px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    button.secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    button.secondary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .review-name {
+      margin: 0 0 8px;
+    }
+
+    .chip-neutral {
+      display: inline-block;
+      margin: 0 0 16px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .review-hint {
+      color: var(--ink-soft);
+      font-size: 13.5px;
+      margin: 0 0 20px;
+    }
+
     .status {
       margin-top: 14px;
       font-size: 13.5px;
@@ -415,8 +460,17 @@
         </label>
       </div>
 
-      <button class="primary" id="submit-btn" disabled>Valider mon choix</button>
-      <p class="status" id="status" role="status" aria-live="polite"></p>
+      <button class="primary" id="submit-btn" disabled>Continuer</button>
+    </div>
+
+    <div class="card" id="review-step" hidden>
+      <p class="step-label">Étape 3 — Confirmez avant l'envoi</p>
+      <p class="selected-name review-name" id="review-name"></p>
+      <span class="chip-neutral" id="review-filiere"></span>
+      <p class="review-hint">Une fois confirmé, votre choix sera enregistré et ne sera plus visible que par l'administration.</p>
+      <button class="primary" id="confirm-send-btn">Confirmer et enregistrer</button>
+      <button class="secondary" id="back-to-choice-btn" type="button">Modifier mon choix</button>
+      <p class="status" id="review-status" role="status" aria-live="polite"></p>
     </div>
 
     <div class="card confirmation" id="confirm-step" hidden>
@@ -441,11 +495,16 @@
     const resultsEl = document.getElementById('results');
     const searchStep = document.getElementById('search-step');
     const choiceStep = document.getElementById('choice-step');
+    const reviewStep = document.getElementById('review-step');
     const confirmStep = document.getElementById('confirm-step');
     const selectedNameEl = document.getElementById('selected-name');
     const changeNameBtn = document.getElementById('change-name');
     const submitBtn = document.getElementById('submit-btn');
-    const statusEl = document.getElementById('status');
+    const reviewNameEl = document.getElementById('review-name');
+    const reviewFiliereEl = document.getElementById('review-filiere');
+    const confirmSendBtn = document.getElementById('confirm-send-btn');
+    const backToChoiceBtn = document.getElementById('back-to-choice-btn');
+    const reviewStatus = document.getElementById('review-status');
     const confirmNameEl = document.getElementById('confirm-name');
     const confirmFiliereEl = document.getElementById('confirm-filiere');
     const redoBtn = document.getElementById('redo-btn');
@@ -487,8 +546,6 @@
       selectedNameEl.textContent = s.nom + ' ' + s.prenom;
       radios.forEach(r => r.checked = false);
       submitBtn.disabled = true;
-      statusEl.textContent = '';
-      statusEl.className = 'status';
       searchStep.hidden = true;
       choiceStep.hidden = false;
     }
@@ -508,13 +565,35 @@
     searchInput.addEventListener('input', () => renderResults(searchInput.value));
     renderResults('');
 
-    submitBtn.addEventListener('click', async () => {
+    // Étape 2 -> Étape 3 : on affiche un récapitulatif, rien n'est encore envoyé.
+    submitBtn.addEventListener('click', () => {
       const checked = document.querySelector('input[name="filiere"]:checked');
       if (!current || !checked) return;
 
-      submitBtn.disabled = true;
-      statusEl.className = 'status';
-      statusEl.textContent = 'Envoi en cours…';
+      reviewNameEl.textContent = current.nom + ' ' + current.prenom;
+      reviewFiliereEl.textContent = checked.value;
+      reviewStatus.textContent = '';
+      reviewStatus.className = 'status';
+      confirmSendBtn.disabled = false;
+      backToChoiceBtn.disabled = false;
+      choiceStep.hidden = true;
+      reviewStep.hidden = false;
+    });
+
+    backToChoiceBtn.addEventListener('click', () => {
+      reviewStep.hidden = true;
+      choiceStep.hidden = false;
+    });
+
+    // Étape 3 -> envoi réel vers la Google Sheet.
+    confirmSendBtn.addEventListener('click', async () => {
+      const checked = document.querySelector('input[name="filiere"]:checked');
+      if (!current || !checked) return;
+
+      confirmSendBtn.disabled = true;
+      backToChoiceBtn.disabled = true;
+      reviewStatus.className = 'status';
+      reviewStatus.textContent = 'Envoi en cours…';
 
       const payload = {
         id: current.id,
@@ -532,12 +611,13 @@
         });
         confirmNameEl.textContent = current.nom + ' ' + current.prenom;
         confirmFiliereEl.textContent = checked.value;
-        choiceStep.hidden = true;
+        reviewStep.hidden = true;
         confirmStep.hidden = false;
       } catch (err) {
-        statusEl.textContent = "Échec de l'envoi. Vérifiez votre connexion et réessayez.";
-        statusEl.className = 'status error';
-        submitBtn.disabled = false;
+        reviewStatus.textContent = "Échec de l'envoi. Vérifiez votre connexion et réessayez.";
+        reviewStatus.className = 'status error';
+        confirmSendBtn.disabled = false;
+        backToChoiceBtn.disabled = false;
       }
     });
 
