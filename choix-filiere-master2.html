@@ -236,34 +236,27 @@
     }
 
     .option {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       position: relative;
       border: 1.5px solid var(--line);
       border-radius: 12px;
-      padding: 14px 16px 14px 46px;
+      padding: 16px;
       cursor: pointer;
       background: var(--paper);
     }
 
     .option input {
-      position: absolute;
-      left: 16px;
-      top: 18px;
       accent-color: var(--accent);
       width: 17px;
       height: 17px;
+      flex: none;
     }
 
     .option .title {
       font-weight: 700;
       font-size: 15.5px;
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .option .desc {
-      font-size: 13.5px;
-      color: var(--ink-soft);
     }
 
     .option:has(input:checked) {
@@ -438,14 +431,10 @@
         <label class="option">
           <input type="radio" name="filiere" value="Management de Projet">
           <span class="title">Management de Projet</span>
-          <span class="desc">Pilotage de projets, méthodologies agiles, gestion des risques et des parties
-            prenantes.</span>
         </label>
         <label class="option">
           <input type="radio" name="filiere" value="Management Touristique">
           <span class="title">Management Touristique</span>
-          <span class="desc">Développement touristique et territorial, gestion hôtelière, valorisation du
-            patrimoine.</span>
         </label>
       </div>
 
