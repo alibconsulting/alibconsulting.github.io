@@ -391,17 +391,6 @@
       margin: 12px 0 0;
     }
 
-    .confirmation .redo {
-      margin-top: 18px;
-      background: none;
-      border: none;
-      color: var(--accent);
-      text-decoration: underline;
-      font: inherit;
-      font-size: 13.5px;
-      cursor: pointer;
-    }
-
     .foot-note {
       margin-top: 20px;
       font-size: 12.5px;
@@ -478,7 +467,6 @@
       <h2 id="confirm-name"></h2>
       <div class="filiere-chip" id="confirm-filiere"></div>
       <p>Votre choix a bien été enregistré. Vous pouvez fermer cette page.</p>
-      <button class="redo" id="redo-btn" type="button">Une erreur ? Corriger mon choix</button>
     </div>
 
     <p class="foot-note">Faculté d'Économie et de Gestion, Marrakech — Université Cadi Ayyad</p>
@@ -507,7 +495,6 @@
     const reviewStatus = document.getElementById('review-status');
     const confirmNameEl = document.getElementById('confirm-name');
     const confirmFiliereEl = document.getElementById('confirm-filiere');
-    const redoBtn = document.getElementById('redo-btn');
     const radios = document.querySelectorAll('input[name="filiere"]');
 
     let current = null;
@@ -619,14 +606,6 @@
         confirmSendBtn.disabled = false;
         backToChoiceBtn.disabled = false;
       }
-    });
-
-    redoBtn.addEventListener('click', () => {
-      confirmStep.hidden = true;
-      searchStep.hidden = false;
-      searchInput.value = '';
-      renderResults('');
-      searchInput.focus();
     });
   </script>
 </body>
